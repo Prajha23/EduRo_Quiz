@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eduro Career Test</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Eduro Career Test</h1>
+    
+    <label for="name">Student Name:</label>
+    <input type="text" id="studentName" required placeholder="Enter your name" />
+
+    <label for="genreSelect">Choose your dream field:</label>
+    <select id="genreSelect" required>
+      <option value="">-- Select Career Field --</option>
+
+      <option value="dancer">Dancer</option>
+      <option value="singer">Singer</option>
+      <option value="actor">Actor</option>
+      <option value="model">Model</option>
+      <option value="makeupArtist">Makeup Artist</option>
+      <option value="fashionDesigner">Fashion Designer</option>
+      <option value="interiorDesigner">Interior Designer</option>
+      <option value="graphicDesigner">Graphic Designer</option>
+      <option value="animatorVFXArtist">Animator/VFX Artist</option>
+      <option value="youtuber">YouTuber</option>
+      <option value="softwareDeveloper">Software Developer</option>
+      <option value="fullStackDeveloper">Full Stack Developer</option>
+      <option value="dataScientist">Data Scientist</option>
+      <option value="aiMlEngineer">AI/ML Engineer</option>
+      <option value="cybersecurityExpert">Cybersecurity Expert</option>
+      <option value="cloudengineer">Cloud Engineer</option>
+      <option value="devOpsEngineer">DevOps Engineer</option>
+      <option value="gameDeveloper">Game Developer</option>
+      <option value="blockchain">Blockchain Developer</option>
+      <option value="uiUxDesigner">UI/UX Designer</option>
+      <option value="physicist">Physicist</option>
+      <option value="chemist">Chemist</option>
+      <option value="biotechnologist">Biotechnologist</option>
+      <option value="microbiologist">Microbiologist</option>
+      <option value="astrophysicist">Astrophysicist</option>
+      <option value="marineBiologist">Marine Biologist</option>
+      <option value="wildlifeBiologist">Wildlife Biologist</option>
+      <option value="environmentalScientist">Environmental Scientist</option>
+      <option value="aagriculturalScientist">Agricultural Scientist</option>
+      <option value="foodTechnologist">Food Technologist</option>
+      <option value="doctor">Doctor (MBBS)</option>
+      <option value="dentist">Dentist (BDS)</option>
+      <option value="physiotherapist">Physiotherapist</option>
+      <option value="pharmacist">Pharmacist</option>
+      <option value="nurse">Nurse</option>
+      <option value="psychologist">Psychologist</option>
+      <option value="nutritionist">Nutritionist</option>
+      <option value="veterinarian">Veterinarian</option>
+      <option value="labTechnician">Lab Technician</option>
+      <option value="radiologist">Radiologist</option>
+      <option value="pilot">Pilot</option>
+      <option value="airHostess">Air Hostess</option>
+      <option value="airportGroundStaff">Airport Ground Staff</option>
+      <option value="indianArmyOfficer">Indian Army Officer</option>
+      <option value="navyOfficer">Navy Officer</option>
+      <option value="airForceOfficer">Air Force Officer</option>
+      <option value="defenseResearcher">Defense Researcher</option>
+      <option value="iasOfficer">IAS Officer</option>
+      <option value="ipsOfficer">IPS Officer</option>
+      <option value="lawyer">Lawyer</option>
+      <option value="judge">Judge</option>
+      <option value="historian">Historian</option>
+      <option value="sociologist">Sociologist</option>
+      <option value="anthropologist">Anthropologist</option>
+      <option value="economist">Economist</option>
+      <option value="statistician">Statistician</option>
+      <option value="archivist">Archivist</option>
+      <option value="theologian">Theologian</option>
+      <option value="journalist">Journalist</option>
+      <option value="contentWriter">Content Writer</option>
+      <option value="editor">Editor</option>
+      <option value="publicRelationsExpert">Public Relations Expert</option>
+      <option value="translator">Translator/Interpreter</option>
+      <option value="rj">Radio Jockey</option>
+      <option value="anchor">News Anchor</option>
+      <option value="podcaster">Podcaster</option>
+      <option value="scriptwriter">Scriptwriter</option>
+      <option value="entrepreneur">Entrepreneur</option>
+      <option value="startupFounder">Startup Founder</option>
+      <option value="marketingManager">Marketing Manager</option>
+      <option value="digitalMarketer">Digital Marketer</option>
+      <option value="stockTrader">Stock Trader</option>
+      <option value="financialAnalyst">Financial Analyst</option>
+      <option value="investmentbanker">Investment Banker</option>
+      <option value="ca">Chartered Accountant (CA)</option>
+      <option value="bankProbationaryOfficer">Bank Probationary Officer (PO)</option>
+      <option value="hrManager">HR Manager</option>
+      <option value="eventplanner">Event Planner</option>
+      <option value="weddingPhotographer">Wedding Photographer</option>
+      <option value="wildlifePhotographer">Wildlife Photographer</option>
+      <option value="ethicalhacker">Ethical Hacker</option>
+      <option value="robotics">Robotics Engineer</option>
+      <option value="automobile">Automobile Engineer</option>
+      <option value="civilengineer">Civil Engineer</option>
+      <option value="mechanicalEngineer">Mechanical Engineer</option>
+      <option value="electricalengineer">Electrical Engineer</option>
+      <option value="electronicsengineer">Electronics Engineer</option>
+      <option value="biomedicalEngineer">Biomedical Engineer</option>
+      <option value="aerospace">Aerospace Engineer</option>
+      <option value="arVrDeveloper">AR/VR Developer</option>
+      <option value="meteorologist">Meteorologist</option>
+      <option value="geologist">Geologist</option>
+      <option value="politicalScientist">Political Scientist</option>
+      <option value="archaeologist">Archaeologist</option>
+      <option value="artDirector">Art Director</option>
+      <option value="filmDirector">Film Director</option>
+      <option value="choreographer">Choreographer</option>
+      <option value="soundengineer">Sound Engineer</option>
+      <option value="fashionstylist">Fashion Stylist</option>
+      <option value="socialMediaManager">Social Media Manager</option>
+    </select>
+
+    <button onclick="redirectToForm()">Start Test</button>
+  </div>
+
+  <script>
+    function redirectToForm() {
+      const name = document.getElementById("studentName").value.trim();
+      const genre = document.getElementById("genreSelect").value;
+
+      if (!name || !genre) {
+        alert("Please enter your name and select a career field.");
+        return;
+      }
+
+      const formLinks = {
+  
+  dancer: "https://forms.gle/tZFnknq8EdZNC2RKA",
+  singer: "https://forms.gle/ipq7J3cUbKpyaZKH7",
+  actor: "https://forms.gle/HJCaibZ6iAGmETeK6",
+  model: "https://forms.gle/FNWHNH68Coyg3Yq28",
+  makeupArtist: "https://forms.gle/UyBa9tSawW4H1m4XA",
+  fashionDesigner: "https://forms.gle/kof13WV3hBzynaFf6",
+  interiorDesigner: "https://forms.gle/oP226epFC3LUFLRi9",
+  graphicDesigner: "https://forms.gle/ZnVkKDStEHDQgrp28",
+  animatorVFXArtist: "https://forms.gle/QDaxHFRYEdFdE3f47",
+  youtuber: "https://forms.gle/PLZ2Vb8qeBT5eQGG7",
+  softwareDeveloper: "https://forms.gle/rmDZ57w6WEtH61vWA",
+  fullStackDeveloper: "https://forms.gle/DfqzkkNSXzBzGNFK9",
+  dataScientist: "https://forms.gle/vY6puQFpd6TpRmsu8",
+  aiMlEngineer: "https://forms.gle/ejNReTazDD9zzRFi7",
+  cybersecurityExpert: "https://forms.gle/oo9LLciDrDUCqzBJ7",
+  cloudEngineer: "https://forms.gle/uNnLribDUVghmkjMA",
+  devOpsEngineer: "https://forms.gle/rJvn3MkT19hhvutU8",
+  gameDeveloper: "https://forms.gle/oJiaDXfHrTQYCQM67",
+  blockchainDeveloper: "https://forms.gle/cLiNg3obpyCN5bpF7",
+  uiUxDesigner: "https://forms.gle/csHhqbEByavmj9aGA",
+  physicist: "https://forms.gle/fVq1Yq3jDzceqZkq5",
+  chemist: "https://forms.gle/3givSXnB1BbauHGt5",
+  biotechnologist: "https://forms.gle/bfBdALhjRvE5PTiS7",
+  microbiologist: "https://forms.gle/ggWZYf7WWjojxPcp6",
+  astrophysicist: "https://forms.gle/MQKcByjYzHcCoBSN9",
+  marineBiologist: "https://forms.gle/6oVaT5KKXWX1xyNV8",
+  wildlifeBiologist: "https://forms.gle/MwcoNknqrkmpd9K29",
+  environmentalScientist: "https://forms.gle/G2No2mRsgvCHrfph9",
+  agriculturalScientist: "https://forms.gle/oBLD8gsewpb55b4cA",
+  foodTechnologist: "https://forms.gle/Kwo484a9kLzTBB1p8",
+  doctor: "https://forms.gle/ZvcHrFMdxDUzX6Mg7",
+  dentist: "https://forms.gle/hxM9vWWBPAqaBbCe8",
+  physiotherapist: "https://forms.gle/xPdNjkPk68mB9tRc7",
+  pharmacist: "https://forms.gle/Pu7bA3AG3ruJbZku5",
+  nurse: "https://forms.gle/HwQrbfzrzsTASsKT6",
+  psychologist: "https://forms.gle/bBjTgVxfHs6jgTG66",
+  nutritionist: "https://forms.gle/kyRWLZGMnpCUdmS88",
+  veterinarian: "https://forms.gle/SGXbVcqJhhGidpNs7",
+  labTechnician: "https://forms.gle/QikWVQYXhEE9nHKV8",
+  radiologist: "https://forms.gle/GwgSKY1Ux6oLBawNA",
+  pilot: "https://forms.gle/KERaZc5xnPAB768C9",
+  airHostess: "https://forms.gle/Ut6gwkEQwwvupxWZA",
+  airportGroundStaff: "https://forms.gle/fNkpsaApZMBMMzUt9",
+  indianArmyOfficer: "https://forms.gle/UBTVUWL7gZTZDcHj9",
+  navyOfficer: "https://forms.gle/GoEdS3fyMSSCtMXE6",
+  airForceOfficer: "https://forms.gle/r7qsfPf5svuSyYQZ6",
+  defenseResearcher: "https://forms.gle/zWJzYM17M4tVSdLp8",
+  iasOfficer: "https://forms.gle/your-ias-officer-form-link",
+  ipsOfficer: "https://forms.gle/WYLQni7rJhymYn5XA",
+  lawyer: "https://forms.gle/iLJ2Kr8C9vdeBhMSA",
+  judge: "https://forms.gle/XNQGoRkt2oTceVE66",
+  historian: "https://forms.gle/gud3ubceKEThNYiR6",
+  sociologist: "https://forms.gle/dEdzc2EfkLNCjHda7",
+  anthropologist: "https://forms.gle/dc1vrMKcyQJujPNw7",
+  economist: "https://forms.gle/tLZ5H6376SFvHWuT8",
+  statistician: "https://forms.gle/pXaq6YAKNFBNtc6Z9k",
+  archivist: "https://forms.gle/iMxPLnDJ2rG3QFWBA",
+  theologian: "https://forms.gle/E7wW5d4LwxjfQdbJ6",
+  journalist: "https://forms.gle/BAuiz8iXLk78X1tR9",
+  contentWriter: "https://forms.gle/m4kMXXygitHsHdUz7",
+  editor: "https://forms.gle/P6U5kJZqdwGDFPAv8",
+  publicRelationsExpert: "https://forms.gle/NZb2ZF9ymEEsomEXA",
+  translatorInterpreter: "https://forms.gle/Xqu2uCsuseuznsSt8",
+  radioJockey: "https://forms.gle/AsvehrKTJXDUVDuP6",
+  newsAnchor: "https://forms.gle/wfBRdnkmiTgnaNem8",
+  podcaster: "https://forms.gle/Z8jaPr2CMjWa5Ldg7",
+  scriptwriter: "https://forms.gle/wtxzfcjo5niYXseZ6",
+  entrepreneur: "https://forms.gle/qz63GkJi3q2ZxTgy5",
+  startupFounder: "https://forms.gle/9ArTVKZBKEFzkNxX8",
+  marketingManager: "https://forms.gle/ZWTHQnVWdeqGUzjB7",
+  digitalMarketer: "https://forms.gle/tguXvM3QFYYosuuR6",
+  stockTrader: "https://forms.gle/gkPZAAFCAY7Nq9xX7",
+  financialAnalyst: "https://forms.gle/GZgr3jnopPBWBs7f7",
+  investmentBanker: "https://forms.gle/JVSEvM46tKzFmnDG8",
+  charteredAccountant: "https://forms.gle/nMKxThb6wY1ec7KS9",
+  bankPO: "https://forms.gle/WCaDWuvZMHD2KZtr9",
+  hrManager: "https://forms.gle/WAawyQrQhFwDM4NC6",
+  eventPlanner: "https://forms.gle/CNX5AEZ9FR1wBY767",
+  weddingPhotographer: "https://forms.gle/zh8YL1wMeULwigyw5",
+  wildlifePhotographer: "https://forms.gle/u514tZe9UcPgAHEX7",
+  ethicalHacker: "https://forms.gle/fMK8Qdby951vo3c1A",
+  roboticsEngineer: "https://forms.gle/9r744WKy8vtmdNY36",
+  automobileEngineer: "https://forms.gle/EWj2kUTVAL5KmJFUA",
+  civilEngineer: "https://forms.gle/dUnAjoCL2KCEty1f6",
+  mechanicalEngineer: "https://forms.gle/MpbwMAYXoGFpTNSu5",
+  electricalEngineer: "https://forms.gle/1gF31QCf3oC5KVNC9",
+  electronicsEngineer: "https://forms.gle/4hgUjdMCNDSDugfv6",
+  biomedicalEngineer: "https://forms.gle/byDyrVzdZPegygJVA",
+  aerospaceEngineer: "https://forms.gle/pM5x2w6VfUkZho8y6",
+  arVrDeveloper: "https://forms.gle/qoHscDHGjvLviGbn8",
+  meteorologist: "https://forms.gle/tMtRuXs6snREAKfG8",
+  geologist: "https://forms.gle/ehzu5ufcoRPpuHjj6",
+  politicalScientist: "https://forms.gle/tpRoUD8AJhQmGhXd8",
+  archaeologist: "https://forms.gle/dCxfcoV8XEV8xFdH6",
+  artDirector: "https://forms.gle/WYEDmPKYKkbt4N8R7",
+  filmDirector: "https://forms.gle/ZqFzoMGzCANfzQ3p7",
+  choreographer: "https://forms.gle/RsxHXGbneAayejTBA",
+  soundEngineer: "https://forms.gle/9kFWaCXszUoSwwLg7",
+  fashionStylist: "https://forms.gle/227JcxoCwWfVMymR9",
+  socialMediaManager: "https://forms.gle/WRzBdW8mjeW8GLRR9"
+};
+
+      if (formLinks[genre]) {
+        window.open(formLinks[genre], "_blank");
+      } else {
+        alert("No test available for this career yet.");
+      }
+    }
+  </script>
+</body>
+</html>
